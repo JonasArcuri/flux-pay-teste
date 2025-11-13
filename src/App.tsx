@@ -1,7 +1,7 @@
-import FintechLanding from "./components/FintechLanding";
+import AppComponent from "./components/FintechLanding";
 
 function App() {
-  return <FintechLanding />;
+  return <AppComponent />;
 }
 
 export default App;
