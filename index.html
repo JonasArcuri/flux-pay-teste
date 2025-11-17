@@ -1,90 +1,124 @@
 <!DOCTYPE html>
 
-
-
 <html lang="pt-BR">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
 
-    <title>CTOwl — Partner técnico para founders</title>
+  <title>CTOwl — Partner técnico premium para founders não técnicos</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Tailwind via CDN -->
+  <!-- Fonte -->
 
-    <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-      html {
+  <link
 
-        scroll-behavior: smooth;
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
 
-      }
+    rel="stylesheet"
 
-    </style>
+  />
 
-  </head>
+  <!-- Tailwind CDN -->
 
-  <body class="bg-slate-950 text-slate-100 antialiased">
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Background decor -->
+  <style>
 
-    <div class="pointer-events-none fixed inset-0 -z-10">
+    html {
 
-      <div class="absolute -left-32 top-0 h-72 w-72 rounded-full bg-blue-600/20 blur-3xl"></div>
+      scroll-behavior: smooth; /* scroll suave entre seções */
 
-      <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-slate-700/30 blur-3xl"></div>
+    }
 
-    </div>
+    body {
 
-    <!-- NAVBAR -->
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
 
-    <header class="sticky top-0 z-40 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur">
+        sans-serif;
+
+    }
+
+  </style>
+
+</head>
+
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+  <!-- Wrapper principal -->
+
+  <div class="min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+
+    <header class="sticky top-0 z-30 border-b border-slate-800/60 bg-slate-950/90 backdrop-blur">
 
       <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
 
+        <!-- Logo -->
+
         <div class="flex items-center gap-2">
 
-          <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 border border-slate-700">
+          <div
 
-            <span class="text-xs font-semibold tracking-[0.2em] text-blue-400">CT</span>
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/10 ring-1 ring-sky-500/40"
+
+          >
+
+            <span class="text-lg font-semibold text-sky-400">CT</span>
 
           </div>
 
-          <div class="flex flex-col leading-tight">
+          <div class="flex flex-col">
 
-            <span class="text-sm font-semibold tracking-[0.25em] text-slate-200 uppercase">CTOwl</span>
+            <span class="text-lg font-semibold tracking-tight">CTOwl</span>
 
-            <span class="text-xs text-slate-400">Partner técnico para founders</span>
+            <span class="text-xs text-slate-400">
+
+              Partner técnico para founders
+
+            </span>
 
           </div>
 
         </div>
 
-        <nav class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
 
-          <a href="#servicos" class="hover:text-blue-400 transition-colors">Serviços</a>
 
-          <a href="#processo" class="hover:text-blue-400 transition-colors">Como trabalhamos</a>
+        <!-- Navegação desktop -->
 
-          <a href="#cases" class="hover:text-blue-400 transition-colors">Cases</a>
+        <nav class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
 
-          <a href="#sobre" class="hover:text-blue-400 transition-colors">Sobre</a>
+          <a href="#services" class="hover:text-sky-400 transition-colors">Serviços</a>
 
-          <a href="#contato" class="hover:text-blue-400 transition-colors">Contato</a>
+          <a href="#process" class="hover:text-sky-400 transition-colors">Como trabalhamos</a>
+
+          <a href="#cases" class="hover:text-sky-400 transition-colors">Cases</a>
+
+          <a href="#about" class="hover:text-sky-400 transition-colors">Sobre</a>
+
+          <a href="#contact" class="hover:text-sky-400 transition-colors">Contato</a>
 
         </nav>
 
-        <div class="hidden md:flex">
+
+
+        <!-- CTA topo -->
+
+        <div class="flex items-center gap-2">
 
           <a
 
-            href="#contato"
+            href="#contact"
 
-            class="rounded-full bg-blue-600 px-4 py-2 text-xs font-medium uppercase tracking-wide text-white shadow-lg shadow-blue-600/30 transition hover:bg-blue-500 hover:shadow-blue-500/40"
+            class="hidden rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-md shadow-sky-500/30 transition
+
+                   hover:scale-[1.02] hover:bg-sky-400 md:inline-flex"
 
           >
 
@@ -92,135 +126,239 @@
 
           </a>
 
+          <!-- Menu mobile simples -->
+
+          <button
+
+            id="mobile-menu-toggle"
+
+            class="inline-flex items-center justify-center rounded-full border border-slate-700 p-2 md:hidden"
+
+            aria-label="Abrir menu"
+
+          >
+
+            <span class="block h-0.5 w-4 bg-slate-200"></span>
+
+            <span class="mt-1 block h-0.5 w-4 bg-slate-200"></span>
+
+          </button>
+
         </div>
-
-        <!-- Mobile menu button (não funcional, só visual) -->
-
-        <button
-
-          class="inline-flex items-center justify-center rounded-lg border border-slate-700 bg-slate-900 p-2 text-slate-300 md:hidden"
-
-          aria-label="Menu"
-
-        >
-
-          <span class="h-0.5 w-4 bg-slate-300"></span>
-
-        </button>
 
       </div>
 
+
+
+      <!-- Menu mobile -->
+
+      <nav
+
+        id="mobile-menu"
+
+        class="mx-auto hidden max-w-6xl flex-col gap-2 border-t border-slate-800 px-4 py-3 text-sm text-slate-200 md:hidden"
+
+      >
+
+        <a href="#services" class="py-1 hover:text-sky-400 transition-colors">Serviços</a>
+
+        <a href="#process" class="py-1 hover:text-sky-400 transition-colors">Como trabalhamos</a>
+
+        <a href="#cases" class="py-1 hover:text-sky-400 transition-colors">Cases</a>
+
+        <a href="#about" class="py-1 hover:text-sky-400 transition-colors">Sobre</a>
+
+        <a href="#contact" class="py-1 hover:text-sky-400 transition-colors">Contato</a>
+
+        <a
+
+          href="#contact"
+
+          class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-slate-950
+
+                 shadow-md shadow-sky-500/30 transition hover:scale-[1.02] hover:bg-sky-400"
+
+        >
+
+          Falar com a CTOwl
+
+        </a>
+
+      </nav>
+
     </header>
 
-    <main class="mx-auto max-w-6xl px-4">
 
-      <!-- HERO -->
 
-      <section class="flex flex-col gap-10 py-12 md:flex-row md:items-center md:py-16" id="topo">
+    <!-- Conteúdo -->
 
-        <!-- Texto -->
+    <main class="flex-1">
 
-        <div class="md:w-1/2 space-y-6">
+      <!-- Hero -->
 
-          <div class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-[11px] text-slate-300">
+      <section class="border-b border-slate-800/60">
 
-            <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+        <div
 
-            Partner técnico para founders não técnicos
+          class="mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-16 pt-10 md:flex-row md:items-center md:py-20"
 
-          </div>
+        >
 
-          <h1 class="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl">
+          <!-- Coluna texto -->
 
-            Tire seu produto do
+          <div class="md:w-1/2">
 
-            <span class="text-blue-400">zero ao um</span>
+            <!-- Badge com posição -->
 
-            com segurança técnica, sem drama com devs.
+            <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/60 px-3 py-1">
 
-          </h1>
+              <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
 
-          <p class="text-sm leading-relaxed text-slate-300 sm:text-base">
+              <span class="text-xs font-medium text-slate-300">
 
-            A CTOwl é o seu braço técnico sênior: clareza de arquitetura, roadmap enxuto e execução madura.
+                Partner técnico premium para founders não técnicos
 
-            Menos promessa vaga, mais produto rodando, testado e pronto para crescer.
-
-          </p>
-
-          <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-
-            <a
-
-              href="#contato"
-
-              class="inline-flex items-center justify-center rounded-full bg-blue-600 px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white shadow-lg shadow-blue-600/30 transition hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-500/40"
-
-            >
-
-              Agendar diagnóstico técnico
-
-            </a>
-
-            <button
-
-              class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900 px-5 py-2.5 text-xs font-medium text-slate-200 transition hover:border-slate-500 hover:bg-slate-900/80"
-
-              onclick="document.getElementById('servicos').scrollIntoView({behavior:'smooth'})"
-
-            >
-
-              Ver como podemos ajudar
-
-            </button>
-
-          </div>
-
-          <div class="flex flex-wrap gap-4 pt-2 text-xs text-slate-400">
-
-            <div class="flex items-center gap-2">
-
-              <div class="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center text-[10px]">✓</div>
-
-              Roadmap enxuto, sem inchar features
+              </span>
 
             </div>
 
-            <div class="flex items-center gap-2">
 
-              <div class="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center text-[10px]">✓</div>
 
-              Arquitetura pensada para escalar
+            <h1 class="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl lg:text-5xl">
+
+              Seu parceiro técnico para tirar produtos do zero
+
+              <span class="text-sky-400">com segurança e clareza.</span>
+
+            </h1>
+
+
+
+            <p class="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
+
+              A CTOwl entra como braço técnico confiável: organizamos arquitetura,
+
+              reduzimos riscos e colocamos seu produto para rodar sem drama, sem
+
+              jargão e com prazos respeitados.
+
+            </p>
+
+
+
+            <!-- Provas rápidas -->
+
+            <div class="mt-5 flex flex-wrap items-center gap-4 text-xs text-slate-400">
+
+              <div class="flex items-center gap-2">
+
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+
+                <span>Foco em founders não técnicos</span>
+
+              </div>
+
+              <div class="flex items-center gap-2">
+
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+
+                <span>Arquitetura primeiro, código depois</span>
+
+              </div>
 
             </div>
 
-            <div class="flex items-center gap-2">
 
-              <div class="h-6 w-6 rounded-full bg-slate-900 flex items-center justify-center text-[10px]">✓</div>
 
-              Comunicação simples, sem jargão vazio
+            <!-- CTAs -->
+
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+
+              <a
+
+                href="#contact"
+
+                class="inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-slate-950
+
+                       shadow-lg shadow-sky-500/30 transition hover:scale-[1.02] hover:bg-sky-400"
+
+              >
+
+                Agendar diagnóstico técnico
+
+              </a>
+
+              <a
+
+                href="#services"
+
+                class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/70 px-5 py-3 text-sm
+
+                       font-medium text-slate-200 transition hover:border-sky-500/80 hover:text-sky-300"
+
+              >
+
+                Ver como podemos ajudar
+
+              </a>
+
+            </div>
+
+
+
+            <!-- Dores resumidas -->
+
+            <div class="mt-6 grid gap-2 text-xs text-slate-400">
+
+              <div class="flex items-center gap-2">
+
+                <span class="rounded-full bg-slate-800 px-2 py-1 text-[10px] uppercase tracking-wide text-sky-300">
+
+                  dores que resolvemos
+
+                </span>
+
+              </div>
+
+              <p>
+
+                Prazos estourados, devs que somem, roadmap confuso, sistemas
+
+                frágeis. Nós organizamos a casa e tiramos o projeto do papel com
+
+                arquitetura bem feita e execução madura.
+
+              </p>
 
             </div>
 
           </div>
 
-        </div>
 
-        <!-- Painel / Mock de produto -->
 
-        <div class="md:w-1/2">
+          <!-- Coluna mock de dashboard / arquitetura -->
 
-          <div class="relative mt-4 md:mt-0">
+          <div class="md:w-1/2">
+
+            <!--
+
+              Composição apenas em HTML/CSS para remeter a um painel técnico:
+
+              cards, fluxos e métricas sugerindo arquitetura, squads e status de projeto.
+
+            -->
 
             <div
 
-              class="relative rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-950 to-slate-900/90 p-4 shadow-2xl shadow-black/50"
+              class="relative mx-auto max-w-md rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900
+
+                     p-4 shadow-2xl shadow-sky-900/40"
 
             >
 
-              <!-- Top bar -->
+              <!-- Barra superior do "painel" -->
 
-              <div class="mb-4 flex items-center justify-between">
+              <div class="mb-3 flex items-center justify-between">
 
                 <div class="flex items-center gap-1.5">
 
@@ -228,141 +366,197 @@
 
                   <span class="h-2 w-2 rounded-full bg-slate-600"></span>
 
-                  <span class="h-2 w-2 rounded-full bg-blue-500"></span>
+                  <span class="h-2 w-2 rounded-full bg-sky-500/80"></span>
 
                 </div>
 
-                <span class="text-[10px] uppercase tracking-[0.2em] text-slate-500">Product Overview</span>
+                <span class="text-[11px] text-slate-400">
+
+                  Arquitetura &amp; Execução · CTOwl
+
+                </span>
 
               </div>
 
-              <!-- Grid -->
 
-              <div class="grid gap-3 md:grid-cols-2">
 
-                <!-- Card 1 -->
+              <!-- Linha superior: status geral -->
 
-                <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-950/60 p-3">
+              <div class="grid grid-cols-3 gap-3 text-xs">
 
-                  <div class="flex items-center justify-between text-xs text-slate-400">
+                <div
 
-                    <span>Roadmap</span>
+                  class="rounded-xl border border-sky-500/40 bg-sky-500/5 px-3 py-2.5 text-slate-100"
 
-                    <span class="rounded-full bg-blue-500/10 px-2 py-0.5 text-[10px] text-blue-300">Enxuto</span>
+                >
 
-                  </div>
+                  <p class="text-[11px] text-slate-300">Status do produto</p>
 
-                  <div class="h-1.5 w-full rounded-full bg-slate-800">
+                  <p class="mt-1 text-sm font-semibold text-sky-300">
 
-                    <div class="h-1.5 w-2/3 rounded-full bg-blue-500"></div>
+                    Em evolução
 
-                  </div>
+                  </p>
 
-                  <p class="text-[11px] text-slate-400">
+                  <p class="mt-1 text-[10px] text-slate-400">
 
-                    Ciclos curtos, entregas contínuas e visíveis para o founder.
+                    Releases semanais, roadmap claro.
 
                   </p>
 
                 </div>
 
-                <!-- Card 2 -->
+                <div
 
-                <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-950/60 p-3">
+                  class="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-slate-100"
 
-                  <div class="flex items-center justify-between text-xs text-slate-400">
+                >
 
-                    <span>Arquitetura</span>
+                  <p class="text-[11px] text-slate-300">Risco técnico</p>
 
-                    <span class="rounded-full bg-slate-800 px-2 py-0.5 text-[10px] text-slate-300">Escalável</span>
+                  <p class="mt-1 text-sm font-semibold text-emerald-300">
+
+                    Reduzido
+
+                  </p>
+
+                  <div class="mt-1 h-1.5 w-full rounded-full bg-slate-800">
+
+                    <div
+
+                      class="h-1.5 w-2/3 rounded-full bg-emerald-400"
+
+                    ></div>
 
                   </div>
 
-                  <div class="flex items-end gap-1.5">
+                </div>
 
-                    <div class="h-10 flex-1 rounded-md bg-blue-500/70"></div>
+                <div
 
-                    <div class="h-6 flex-1 rounded-md bg-slate-700"></div>
+                  class="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2.5 text-slate-100"
 
-                    <div class="h-8 flex-1 rounded-md bg-slate-700"></div>
+                >
 
-                    <div class="h-4 flex-1 rounded-md bg-slate-700"></div>
+                  <p class="text-[11px] text-slate-300">Prazos</p>
 
-                  </div>
+                  <p class="mt-1 text-sm font-semibold text-amber-200">
 
-                  <p class="text-[11px] text-slate-400">
+                    Sob controle
 
-                    Stack moderna com foco em estabilidade e custo controlado.
+                  </p>
+
+                  <p class="mt-1 text-[10px] text-slate-400">
+
+                    Sprints curtas e previsíveis.
 
                   </p>
 
                 </div>
 
-                <!-- Card 3 (tabela) -->
+              </div>
 
-                <div class="md:col-span-2 rounded-xl border border-slate-800 bg-slate-950/60 p-3">
 
-                  <div class="mb-2 flex items-center justify-between text-xs text-slate-400">
 
-                    <span>Visão de produto</span>
+              <!-- Fluxo / arquitetura simplificada -->
 
-                    <span>CTOwl Board</span>
+              <div class="mt-4 rounded-xl border border-slate-800 bg-slate-900/70 p-3">
+
+                <p class="text-[11px] font-medium text-slate-300">
+
+                  Fluxo de entrega CTOwl
+
+                </p>
+
+                <div class="mt-3 flex flex-col gap-2">
+
+                  <div class="flex items-center gap-2">
+
+                    <span
+
+                      class="flex h-6 w-6 items-center justify-center rounded-full bg-sky-500/10 text-[11px] font-semibold text-sky-300"
+
+                    >
+
+                      1
+
+                    </span>
+
+                    <div class="flex-1">
+
+                      <p class="text-[11px] font-medium text-slate-200">
+
+                        Diagnóstico &amp; alinhamento de produto
+
+                      </p>
+
+                      <p class="text-[10px] text-slate-400">
+
+                        Entendemos negócio, riscos e cenário atual.
+
+                      </p>
+
+                    </div>
 
                   </div>
 
-                  <div class="overflow-hidden rounded-lg border border-slate-800">
+                  <div class="flex items-center gap-2">
 
-                    <table class="w-full border-collapse text-[11px]">
+                    <span
 
-                      <thead class="bg-slate-900/80 text-slate-300">
+                      class="flex h-6 w-6 items-center justify-center rounded-full bg-sky-500/10 text-[11px] font-semibold text-sky-300"
 
-                        <tr>
+                    >
 
-                          <th class="px-3 py-2 text-left font-medium">Feature</th>
+                      2
 
-                          <th class="px-3 py-2 text-left font-medium">Status</th>
+                    </span>
 
-                          <th class="px-3 py-2 text-left font-medium">Impacto</th>
+                    <div class="flex-1">
 
-                        </tr>
+                      <p class="text-[11px] font-medium text-slate-200">
 
-                      </thead>
+                        Arquitetura &amp; plano de execução
 
-                      <tbody class="bg-slate-950/70">
+                      </p>
 
-                        <tr class="border-t border-slate-800">
+                      <p class="text-[10px] text-slate-400">
 
-                          <td class="px-3 py-2 text-slate-300">MVP funcional</td>
+                        Desenhamos arquitetura, escopo e roadmap enxuto.
 
-                          <td class="px-3 py-2 text-blue-300">Em desenvolvimento</td>
+                      </p>
 
-                          <td class="px-3 py-2 text-slate-400">Liberar primeiras vendas</td>
+                    </div>
 
-                        </tr>
+                  </div>
 
-                        <tr class="border-t border-slate-800">
+                  <div class="flex items-center gap-2">
 
-                          <td class="px-3 py-2 text-slate-300">Arquitetura escalável</td>
+                    <span
 
-                          <td class="px-3 py-2 text-green-300">Concluída</td>
+                      class="flex h-6 w-6 items-center justify-center rounded-full bg-sky-500/10 text-[11px] font-semibold text-sky-300"
 
-                          <td class="px-3 py-2 text-slate-400">Reduz risco técnico futuro</td>
+                    >
 
-                        </tr>
+                      3
 
-                        <tr class="border-t border-slate-800">
+                    </span>
 
-                          <td class="px-3 py-2 text-slate-300">Dashboard do founder</td>
+                    <div class="flex-1">
 
-                          <td class="px-3 py-2 text-yellow-300">Em validação</td>
+                      <p class="text-[11px] font-medium text-slate-200">
 
-                          <td class="px-3 py-2 text-slate-400">Transparência total do progresso</td>
+                        Entrega contínua &amp; feedback
 
-                        </tr>
+                      </p>
 
-                      </tbody>
+                      <p class="text-[10px] text-slate-400">
 
-                    </table>
+                        Ciclos curtos, visibilidade total do que está sendo feito.
+
+                      </p>
+
+                    </div>
 
                   </div>
 
@@ -370,15 +564,1235 @@
 
               </div>
 
-              <!-- Badge inferior -->
 
-              <div class="mt-3 flex items-center justify-between text-[10px] text-slate-500">
 
-                <span>Transparência de produto em tempo real.</span>
+              <!-- Mini lista de squads / stacks -->
 
-                <span class="rounded-full bg-slate-900 px-2 py-0.5 text-[9px] uppercase tracking-[0.2em] text-blue-300">
+              <div class="mt-4 grid grid-cols-2 gap-3 text-[11px]">
 
-                  CTOwl Studio
+                <div
+
+                  class="rounded-lg border border-slate-800 bg-slate-900/70 p-2.5"
+
+                >
+
+                  <p class="mb-1 text-slate-300">Stack de produto</p>
+
+                  <div class="flex flex-wrap gap-1">
+
+                    <span
+
+                      class="rounded-full bg-slate-800 px-2 py-0.5 text-[10px] text-slate-300"
+
+                    >
+
+                      React
+
+                    </span>
+
+                    <span
+
+                      class="rounded-full bg-slate-800 px-2 py-0.5 text-[10px] text-slate-300"
+
+                    >
+
+                      Node
+
+                    </span>
+
+                    <span
+
+                      class="rounded-full bg-slate-800 px-2 py-0.5 text-[10px] text-slate-300"
+
+                    >
+
+                      Microserviços
+
+                    </span>
+
+                    <span
+
+                      class="rounded-full bg-slate-800 px-2 py-0.5 text-[10px] text-slate-300"
+
+                    >
+
+                      CI/CD
+
+                    </span>
+
+                  </div>
+
+                </div>
+
+                <div
+
+                  class="rounded-lg border border-slate-800 bg-slate-900/70 p-2.5"
+
+                >
+
+                  <p class="mb-1 text-slate-300">Squad alocado</p>
+
+                  <ul class="space-y-1 text-[10px] text-slate-400">
+
+                    <li>Tech lead sênior</li>
+
+                    <li>Frontend + Backend</li>
+
+                    <li>Arquiteto de sistemas</li>
+
+                    <li>Suporte ao produto</li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Dores do Founder -->
+
+      <section class="border-b border-slate-800/60 bg-slate-950">
+
+        <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+
+          <div class="grid gap-10 md:grid-cols-[1.2fr,1fr] md:items-start">
+
+            <div>
+
+              <h2 class="text-xl font-semibold tracking-tight text-slate-50 md:text-2xl">
+
+                Se você é founder não técnico, provavelmente já passou por isso:
+
+              </h2>
+
+              <p class="mt-4 max-w-xl text-sm leading-relaxed text-slate-300">
+
+                Projetos travados não são azar. São resultado de decisões técnicas ruins,
+
+                comunicação confusa e falta de ownership. Nós atacamos a raiz do problema
+
+                — não só o sintoma.
+
+              </p>
+
+
+
+              <div class="mt-6 grid gap-4 md:grid-cols-2">
+
+                <!-- Dor 1 -->
+
+                <div
+
+                  class="group rounded-xl border border-slate-800 bg-slate-900/60 p-4 transition
+
+                         hover:border-sky-500/60 hover:bg-slate-900 hover:-translate-y-0.5"
+
+                >
+
+                  <h3 class="text-sm font-semibold text-slate-50">
+
+                    Prazos estourados em sequência
+
+                  </h3>
+
+                  <p class="mt-2 text-xs text-slate-300">
+
+                    O produto nunca "fica pronto", sempre falta uma sprint, sempre surge
+
+                    um imprevisto. A visão de negócio vai ficando para depois.
+
+                  </p>
+
+                  <p class="mt-3 text-[11px] text-sky-300">
+
+                    Como resolvemos:
+
+                    <span class="text-slate-300">
+
+                      escopo enxuto, roadmap realista e entregas em ciclos curtos.
+
+                    </span>
+
+                  </p>
+
+                </div>
+
+
+
+                <!-- Dor 2 -->
+
+                <div
+
+                  class="group rounded-xl border border-slate-800 bg-slate-900/60 p-4 transition
+
+                         hover:border-sky-500/60 hover:bg-slate-900 hover:-translate-y-0.5"
+
+                >
+
+                  <h3 class="text-sm font-semibold text-slate-50">
+
+                    Devs que somem ou não se posicionam
+
+                  </h3>
+
+                  <p class="mt-2 text-xs text-slate-300">
+
+                    Falta clareza do que está sendo feito, você descobre problemas tarde
+
+                    demais e o time não assume responsabilidade técnica.
+
+                  </p>
+
+                  <p class="mt-3 text-[11px] text-sky-300">
+
+                    Como resolvemos:
+
+                    <span class="text-slate-300">
+
+                      liderança técnica sênior, rituais claros e reports objetivos.
+
+                    </span>
+
+                  </p>
+
+                </div>
+
+
+
+                <!-- Dor 3 -->
+
+                <div
+
+                  class="group rounded-xl border border-slate-800 bg-slate-900/60 p-4 transition
+
+                         hover:border-sky-500/60 hover:bg-slate-900 hover:-translate-y-0.5"
+
+                >
+
+                  <h3 class="text-sm font-semibold text-slate-50">
+
+                    Falta de clareza técnica
+
+                  </h3>
+
+                  <p class="mt-2 text-xs text-slate-300">
+
+                    Você não fala "linguagem de dev" e sente que está no escuro quando
+
+                    alguém discute stack, arquitetura ou trade-offs.
+
+                  </p>
+
+                  <p class="mt-3 text-[11px] text-sky-300">
+
+                    Como resolvemos:
+
+                    <span class="text-slate-300">
+
+                      traduzimos decisões técnicas para impacto de negócio e riscos.
+
+                    </span>
+
+                  </p>
+
+                </div>
+
+
+
+                <!-- Dor 4 -->
+
+                <div
+
+                  class="group rounded-xl border border-slate-800 bg-slate-900/60 p-4 transition
+
+                         hover:border-sky-500/60 hover:bg-slate-900 hover:-translate-y-0.5"
+
+                >
+
+                  <h3 class="text-sm font-semibold text-slate-50">
+
+                    Roadmap inflado que não entrega
+
+                  </h3>
+
+                  <p class="mt-2 text-xs text-slate-300">
+
+                    Muitas features planejadas, pouca coisa em produção. O produto não
+
+                    gera tração porque nunca chega na mão do usuário.
+
+                  </p>
+
+                  <p class="mt-3 text-[11px] text-sky-300">
+
+                    Como resolvemos:
+
+                    <span class="text-slate-300">
+
+                      priorização agressiva, MVP sério e foco no que move métrica.
+
+                    </span>
+
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- Bloco de reframing / callout -->
+
+            <div
+
+              class="rounded-2xl border border-sky-500/40 bg-sky-500/5 p-5 md:p-6"
+
+            >
+
+              <p class="text-xs font-semibold uppercase tracking-wide text-sky-300">
+
+                Reenquadrando o problema
+
+              </p>
+
+              <h3 class="mt-3 text-sm font-semibold text-slate-50">
+
+                Não é sobre "achar devs melhores". É sobre ter um parceiro técnico que
+
+                pensa o produto com você.
+
+              </h3>
+
+              <p class="mt-3 text-sm text-slate-200">
+
+                A CTOwl opera como um braço técnico estratégico: entra desde o diagnóstico,
+
+                desenha a arquitetura e acompanha execução. Assim, você deixa de apagar
+
+                incêndio e volta a focar em mercado, vendas e produto.
+
+              </p>
+
+              <a
+
+                href="#contact"
+
+                class="mt-4 inline-flex text-sm font-medium text-sky-300 underline-offset-2 hover:text-sky-200 hover:underline"
+
+              >
+
+                Quero entender como isso se aplicaria ao meu caso
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Serviços / Produtos -->
+
+      <section id="services" class="border-b border-slate-800/60 bg-slate-950">
+
+        <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+
+          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+
+            <div>
+
+              <h2 class="text-xl font-semibold tracking-tight text-slate-50 md:text-2xl">
+
+                Como a CTOwl entra no seu produto
+
+              </h2>
+
+              <p class="mt-3 max-w-xl text-sm leading-relaxed text-slate-300">
+
+                Esqueça contratos engessados de fábrica de software. Operamos com
+
+                modelos pensados para founders não técnicos em diferentes estágios:
+
+                da ideia ao resgate de projetos travados.
+
+              </p>
+
+            </div>
+
+            <div class="flex flex-wrap gap-2 text-xs text-slate-400">
+
+              <span
+
+                class="rounded-full border border-slate-700 px-3 py-1"
+
+              >
+
+                React · Node · Microsserviços · CI/CD
+
+              </span>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+
+            <!-- Serviço 1 -->
+
+            <article
+
+              class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm
+
+                     transition hover:border-sky-500/70 hover:bg-slate-900 hover:-translate-y-1"
+
+            >
+
+              <div class="mb-3 flex items-center justify-between">
+
+                <h3 class="text-sm font-semibold text-slate-50">CTO-as-a-Service</h3>
+
+                <span
+
+                  class="rounded-full bg-slate-800 px-2 py-1 text-[10px] font-medium text-sky-300"
+
+                >
+
+                  Ideal para: tração &amp; crescimento
+
+                </span>
+
+              </div>
+
+              <ul class="space-y-2 text-xs text-slate-300">
+
+                <li>• Decisões de stack e arquitetura guiadas por negócio.</li>
+
+                <li>• Acompanhamento do time técnico e filtro de fornecedores.</li>
+
+                <li>• Tradução de riscos técnicos em impacto para investidores.</li>
+
+              </ul>
+
+              <p class="mt-4 text-[11px] text-slate-400">
+
+                Para founders que precisam de liderança técnica sênior sem contratar
+
+                um CTO full-time.
+
+              </p>
+
+            </article>
+
+
+
+            <!-- Serviço 2 -->
+
+            <article
+
+              class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm
+
+                     transition hover:border-sky-500/70 hover:bg-slate-900 hover:-translate-y-1"
+
+            >
+
+              <div class="mb-3 flex items-center justify-between">
+
+                <h3 class="text-sm font-semibold text-slate-50">
+
+                  Discovery &amp; Arquitetura
+
+                </h3>
+
+                <span
+
+                  class="rounded-full bg-slate-800 px-2 py-1 text-[10px] font-medium text-sky-300"
+
+                >
+
+                  Ideal para: ideia &amp; MVP
+
+                </span>
+
+              </div>
+
+              <ul class="space-y-2 text-xs text-slate-300">
+
+                <li>• Clarificamos o que realmente precisa ser construído agora.</li>
+
+                <li>• Desenhamos arquitetura enxuta e escalável.</li>
+
+                <li>• Entregamos documentação que qualquer time entende.</li>
+
+              </ul>
+
+              <p class="mt-4 text-[11px] text-slate-400">
+
+                Para quem não quer começar errando a base técnica do produto.
+
+              </p>
+
+            </article>
+
+
+
+            <!-- Serviço 3 -->
+
+            <article
+
+              class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm
+
+                     transition hover:border-sky-500/70 hover:bg-slate-900 hover:-translate-y-1"
+
+            >
+
+              <div class="mb-3 flex items-center justify-between">
+
+                <h3 class="text-sm font-semibold text-slate-50">
+
+                  Squad de Desenvolvimento Sênior
+
+                </h3>
+
+                <span
+
+                  class="rounded-full bg-slate-800 px-2 py-1 text-[10px] font-medium text-sky-300"
+
+                >
+
+                  Ideal para: MVP &amp; novas features
+
+                </span>
+
+              </div>
+
+              <ul class="space-y-2 text-xs text-slate-300">
+
+                <li>• Time enxuto com devs sênior focados em entrega.</li>
+
+                <li>• Sprints curtas, backlog claro e previsível.</li>
+
+                <li>• Integração com o seu time de produto/negócio.</li>
+
+              </ul>
+
+              <p class="mt-4 text-[11px] text-slate-400">
+
+                Para acelerar o desenvolvimento sem perder qualidade técnica.
+
+              </p>
+
+            </article>
+
+
+
+            <!-- Serviço 4 -->
+
+            <article
+
+              class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm
+
+                     transition hover:border-sky-500/70 hover:bg-slate-900 hover:-translate-y-1"
+
+            >
+
+              <div class="mb-3 flex items-center justify-between">
+
+                <h3 class="text-sm font-semibold text-slate-50">
+
+                  Auditoria Técnica &amp; Resgate
+
+                </h3>
+
+                <span
+
+                  class="rounded-full bg-slate-800 px-2 py-1 text-[10px] font-medium text-sky-300"
+
+                >
+
+                  Ideal para: projetos travados
+
+                </span>
+
+              </div>
+
+              <ul class="space-y-2 text-xs text-slate-300">
+
+                <li>• Diagnóstico honesto da situação atual do código.</li>
+
+                <li>• Plano de resgate com prioridades e riscos.</li>
+
+                <li>• Execução para destravar o que já foi investido.</li>
+
+              </ul>
+
+              <p class="mt-4 text-[11px] text-slate-400">
+
+                Para quando o sistema virou um emaranhado e ninguém mais quer mexer.
+
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Como Trabalhamos (Processo) -->
+
+      <section id="process" class="border-b border-slate-800/60 bg-slate-950">
+
+        <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+
+          <div class="max-w-3xl">
+
+            <h2 class="text-xl font-semibold tracking-tight text-slate-50 md:text-2xl">
+
+              Clareza primeiro. Arquitetura bem feita. Depois, código.
+
+            </h2>
+
+            <p class="mt-3 text-sm leading-relaxed text-slate-300">
+
+              Nosso processo foi desenhado para founders que querem enxergar o
+
+              caminho antes de investir mais tempo e dinheiro. Nada de "vamos vendo".
+
+            </p>
+
+          </div>
+
+
+
+          <div class="mt-8 grid gap-6 md:grid-cols-4">
+
+            <!-- Passo 1 -->
+
+            <div
+
+              class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm
+
+                     transition hover:border-sky-500/70 hover:bg-slate-900 hover:-translate-y-1"
+
+            >
+
+              <span
+
+                class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/10 text-xs font-semibold text-sky-300"
+
+              >
+
+                1
+
+              </span>
+
+              <h3 class="text-sm font-semibold text-slate-50">
+
+                Diagnóstico técnico &amp; de produto
+
+              </h3>
+
+              <p class="mt-2 text-xs text-slate-300">
+
+                Entendemos o contexto: modelo de negócio, expectativas, restrições,
+
+                histórico com times anteriores e riscos percebidos.
+
+              </p>
+
+              <p class="mt-3 text-[11px] text-slate-400">
+
+                Saída: mapa claro dos problemas e oportunidades técnicas.
+
+              </p>
+
+            </div>
+
+
+
+            <!-- Passo 2 -->
+
+            <div
+
+              class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm
+
+                     transition hover:border-sky-500/70 hover:bg-slate-900 hover:-translate-y-1"
+
+            >
+
+              <span
+
+                class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/10 text-xs font-semibold text-sky-300"
+
+              >
+
+                2
+
+              </span>
+
+              <h3 class="text-sm font-semibold text-slate-50">
+
+                Arquitetura &amp; plano de ataque
+
+              </h3>
+
+              <p class="mt-2 text-xs text-slate-300">
+
+                Desenhamos a arquitetura respeitando o estágio da startup. Nada de
+
+                "overengineering", mas também nada que quebre em 6 meses.
+
+              </p>
+
+              <p class="mt-3 text-[11px] text-slate-400">
+
+                Saída: documento de arquitetura + roadmap de entregas.
+
+              </p>
+
+            </div>
+
+
+
+            <!-- Passo 3 -->
+
+            <div
+
+              class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm
+
+                     transition hover:border-sky-500/70 hover:bg-slate-900 hover:-translate-y-1"
+
+            >
+
+              <span
+
+                class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/10 text-xs font-semibold text-sky-300"
+
+              >
+
+                3
+
+              </span>
+
+              <h3 class="text-sm font-semibold text-slate-50">
+
+                Execução em ciclos curtos
+
+              </h3>
+
+              <p class="mt-2 text-xs text-slate-300">
+
+                Entregas semanais ou quinzenais, com visibilidade clara do que foi
+
+                feito, do que está em andamento e do que vem a seguir.
+
+              </p>
+
+              <p class="mt-3 text-[11px] text-slate-400">
+
+                Saída: produto evoluindo continuamente, sem apagões de comunicação.
+
+              </p>
+
+            </div>
+
+
+
+            <!-- Passo 4 -->
+
+            <div
+
+              class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm
+
+                     transition hover:border-sky-500/70 hover:bg-slate-900 hover:-translate-y-1"
+
+            >
+
+              <span
+
+                class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/10 text-xs font-semibold text-sky-300"
+
+              >
+
+                4
+
+              </span>
+
+              <h3 class="text-sm font-semibold text-slate-50">
+
+                Acompanhamento &amp; evolução
+
+              </h3>
+
+              <p class="mt-2 text-xs text-slate-300">
+
+                Ajustamos o plano conforme tração, feedback de usuário e novas
+
+                prioridades. Sempre com base em dados e riscos reais.
+
+              </p>
+
+              <p class="mt-3 text-[11px] text-slate-400">
+
+                Saída: base técnica pronta para próximas fases da startup.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Cases / Provas -->
+
+      <section id="cases" class="border-b border-slate-800/60 bg-slate-950">
+
+        <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+
+          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+
+            <div>
+
+              <h2 class="text-xl font-semibold tracking-tight text-slate-50 md:text-2xl">
+
+                Provas de execução técnica e consistência
+
+              </h2>
+
+              <p class="mt-3 max-w-xl text-sm leading-relaxed text-slate-300">
+
+                Mais do que código, entregamos produtos que saem do slide e chegam na
+
+                mão do usuário com arquitetura sólida por trás.
+
+              </p>
+
+            </div>
+
+            <div class="flex flex-col items-start gap-1 text-xs text-slate-400">
+
+              <span>+X produtos lançados em diferentes estágios.</span>
+
+              <span>Experiência em SaaS, fintech, marketplaces e plataformas B2B.</span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Métricas / badges -->
+
+          <div class="mt-8 grid gap-4 md:grid-cols-3">
+
+            <div
+
+              class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm"
+
+            >
+
+              <p class="text-xs font-medium uppercase tracking-wide text-sky-300">
+
+                Stack &amp; boas práticas
+
+              </p>
+
+              <p class="mt-2 text-sm text-slate-200">
+
+                React, Node, microsserviços, filas, bancos relacionais e não
+
+                relacionais, CI/CD em cloud.
+
+              </p>
+
+              <p class="mt-3 text-[11px] text-slate-400">
+
+                Projetos pensados para serem mantidos por outros times no futuro.
+
+              </p>
+
+            </div>
+
+
+
+            <div
+
+              class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm"
+
+            >
+
+              <p class="text-xs font-medium uppercase tracking-wide text-sky-300">
+
+                Projetos destravados
+
+              </p>
+
+              <p class="mt-2 text-sm text-slate-200">
+
+                Entramos em sistemas que estavam parados há meses e entregamos as
+
+                primeiras releases em semanas.
+
+              </p>
+
+              <p class="mt-3 text-[11px] text-slate-400">
+
+                Foco em recuperar o valor já investido antes de propor algo novo.
+
+              </p>
+
+            </div>
+
+
+
+            <div
+
+              class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm"
+
+            >
+
+              <p class="text-xs font-medium uppercase tracking-wide text-sky-300">
+
+                Visão de longo prazo
+
+              </p>
+
+              <p class="mt-2 text-sm text-slate-200">
+
+                Arquiteturas que permitem evoluir o produto sem reescrever tudo a
+
+                cada nova fase da startup.
+
+              </p>
+
+              <p class="mt-3 text-[11px] text-slate-400">
+
+                Tomamos decisões pensando nos próximos 12–24 meses de produto.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Mini cases (você pode trocar pelos reais depois) -->
+
+          <div class="mt-10 grid gap-4 md:grid-cols-3">
+
+            <div
+
+              class="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-300"
+
+            >
+
+              <p class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+
+                Mini-case · SaaS B2B
+
+              </p>
+
+              <p class="mt-2 text-slate-200">
+
+                MVP travado há 8 meses foi reorganizado em 3 módulos claros,
+
+                com releases quinzenais e onboarding dos primeiros clientes em 90 dias.
+
+              </p>
+
+            </div>
+
+            <div
+
+              class="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-300"
+
+            >
+
+              <p class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+
+                Mini-case · Plataforma de pagamentos
+
+              </p>
+
+              <p class="mt-2 text-slate-200">
+
+                Revisão de arquitetura reduziu tempo de deploy e risco de queda em
+
+                horário de pico, com monitoramento e alertas configurados.
+
+              </p>
+
+            </div>
+
+            <div
+
+              class="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-300"
+
+            >
+
+              <p class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+
+                Mini-case · Marketplace nichado
+
+              </p>
+
+              <p class="mt-2 text-slate-200">
+
+                Reescrita parcial de módulos críticos para permitir novas fontes de
+
+                receita sem quebrar o que já funcionava.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Sobre a CTOwl -->
+
+      <section id="about" class="border-b border-slate-800/60 bg-slate-950">
+
+        <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+
+          <div class="grid gap-10 md:grid-cols-[1.2fr,1fr] md:items-start">
+
+            <div>
+
+              <h2 class="text-xl font-semibold tracking-tight text-slate-50 md:text-2xl">
+
+                Sobre a CTOwl
+
+              </h2>
+
+              <p class="mt-3 text-sm leading-relaxed text-slate-300">
+
+                A CTOwl nasce da vivência prática em tirar produtos do zero, resgatar
+
+                sistemas legados e traduzir tecnologia para founders que pensam
+
+                negócio antes de código.
+
+              </p>
+
+              <p class="mt-3 text-sm leading-relaxed text-slate-300">
+
+                Não somos uma fábrica de software genérica. Atuamos como parceiro
+
+                técnico: pensamos arquitetura, acompanhamos execução e garantimos que
+
+                você tenha clareza sobre o que está acontecendo com o seu produto.
+
+              </p>
+
+
+
+              <div class="mt-6 grid gap-4 md:grid-cols-3 text-xs text-slate-300">
+
+                <div>
+
+                  <p class="text-[11px] font-semibold uppercase tracking-wide text-sky-300">
+
+                    Visão
+
+                  </p>
+
+                  <p class="mt-1">
+
+                    Ser o braço técnico confiável de founders não técnicos que querem
+
+                    construir produtos sustentáveis.
+
+                  </p>
+
+                </div>
+
+                <div>
+
+                  <p class="text-[11px] font-semibold uppercase tracking-wide text-sky-300">
+
+                    Como pensamos
+
+                  </p>
+
+                  <p class="mt-1">
+
+                    Menos buzzword, mais clareza. Menos feature, mais impacto. Menos
+
+                    improviso, mais arquitetura.
+
+                  </p>
+
+                </div>
+
+                <div>
+
+                  <p class="text-[11px] font-semibold uppercase tracking-wide text-sky-300">
+
+                    O que valorizamos
+
+                  </p>
+
+                  <p class="mt-1">
+
+                    Transparência, previsibilidade, comunicação simples e decisões que
+
+                    seu "eu do futuro" agradece.
+
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- Card de "quem está por trás" (placeholder) -->
+
+            <div
+
+              class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm"
+
+            >
+
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-400">
+
+                Quem está por trás
+
+              </p>
+
+              <p class="mt-3 text-sm text-slate-200">
+
+                A CTOwl é liderada por perfis técnicos com experiência em startups,
+
+                produto digital e arquitetura de sistemas modernos.
+
+              </p>
+
+              <p class="mt-3 text-xs text-slate-300">
+
+                Já atuamos em contextos de:
+
+              </p>
+
+              <ul class="mt-2 space-y-1 text-xs text-slate-300">
+
+                <li>• SaaS B2B com necessidade de alta confiabilidade.</li>
+
+                <li>• Plataformas financeiras e integrações complexas.</li>
+
+                <li>• Produtos em fase de descoberta, MVP e pivot.</li>
+
+              </ul>
+
+              <p class="mt-4 text-[11px] text-slate-400">
+
+                Você não precisa virar especialista em tecnologia. Precisa de alguém
+
+                que defenda seus interesses do lado técnico.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- CTA Final / Contato -->
+
+      <section id="contact" class="bg-slate-950">
+
+        <div class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+
+          <div class="grid gap-10 md:grid-cols-[1.1fr,1fr] md:items-start">
+
+            <div>
+
+              <h2 class="text-xl font-semibold tracking-tight text-slate-50 md:text-2xl">
+
+                Vamos destravar seu produto com segurança técnica.
+
+              </h2>
+
+              <p class="mt-3 text-sm leading-relaxed text-slate-300">
+
+                Se você é founder não técnico e precisa tirar um produto do zero, dar
+
+                o próximo passo ou resgatar um sistema travado, a CTOwl pode entrar
+
+                como seu partner técnico.
+
+              </p>
+
+              <p class="mt-3 text-sm leading-relaxed text-slate-300">
+
+                No diagnóstico inicial, entendemos seu contexto, avaliamos riscos e
+
+                sugerimos o modelo de atuação mais adequado. Sem compromisso.
+
+              </p>
+
+
+
+              <div class="mt-6 flex flex-wrap items-center gap-3 text-sm">
+
+                <!-- Substitua o href pelo seu link real de WhatsApp/Calendly -->
+
+                <a
+
+                  href="#"
+
+                  class="inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-slate-950
+
+                         shadow-lg shadow-sky-500/30 transition hover:scale-[1.02] hover:bg-sky-400"
+
+                >
+
+                  Falar com a CTOwl
+
+                </a>
+
+                <span class="text-xs text-slate-400">
+
+                  Resposta focada em clareza, não em jargão técnico.
 
                 </span>
 
@@ -386,743 +1800,171 @@
 
             </div>
 
-          </div>
 
-        </div>
 
-      </section>
+            <!-- Formulário de contato -->
 
-      <!-- DORES DO FOUNDER -->
+            <div
 
-      <section id="servicos" class="border-t border-slate-900/80 py-10">
+              class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5 shadow-xl shadow-slate-950/70"
 
-        <div class="grid gap-10 md:grid-cols-[1.2fr,1fr] md:items-start">
+            >
 
-          <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-sky-300">
 
-            <h2 class="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-
-              para quem é a ctowl
-
-            </h2>
-
-            <p class="mt-3 text-xl font-semibold text-slate-50 md:text-2xl">
-
-              Se você é founder não técnico e sente que o produto não sai do lugar, você não está sozinho.
-
-            </p>
-
-            <p class="mt-3 text-sm text-slate-300">
-
-              A maioria dos founders passa pelas mesmas frustrações: devs que somem, prazos que estouram, pouca clareza do que
-
-              está sendo feito. Nosso trabalho é acabar com esse ciclo.
-
-            </p>
-
-            <div class="mt-6 grid gap-3 text-sm text-slate-200 sm:grid-cols-2">
-
-              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-950/80 p-3">
-
-                <h3 class="text-[13px] font-medium text-slate-50">Projetos que não evoluem</h3>
-
-                <ul class="space-y-1 text-[12px] text-slate-300">
-
-                  <li>• Roadmaps gigantes que ninguém consegue explicar.</li>
-
-                  <li>• Sem entregas visíveis, só promessas.</li>
-
-                  <li>• Você não sabe em que pé o sistema está.</li>
-
-                </ul>
-
-              </div>
-
-              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-950/80 p-3">
-
-                <h3 class="text-[13px] font-medium text-slate-50">Risco técnico alto</h3>
-
-                <ul class="space-y-1 text-[12px] text-slate-300">
-
-                  <li>• Decisões de stack sem critério.</li>
-
-                  <li>• Dívida técnica crescendo sem controle.</li>
-
-                  <li>• Medo de escalar usuários e tudo quebrar.</li>
-
-                </ul>
-
-              </div>
-
-              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-950/80 p-3">
-
-                <h3 class="text-[13px] font-medium text-slate-50">Comunicação travada</h3>
-
-                <ul class="space-y-1 text-[12px] text-slate-300">
-
-                  <li>• Linguagem técnica que não traduz para negócio.</li>
-
-                  <li>• Você não consegue decidir com segurança.</li>
-
-                  <li>• Falta visão integrada de produto.</li>
-
-                </ul>
-
-              </div>
-
-              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-950/80 p-3">
-
-                <h3 class="text-[13px] font-medium text-slate-50">Pressão de cliente e investidor</h3>
-
-                <ul class="space-y-1 text-[12px] text-slate-300">
-
-                  <li>• Cobrança por features que não saem.</li>
-
-                  <li>• Dúvidas na hora de captar sem produto sólido.</li>
-
-                  <li>• Falta algo concreto para mostrar.</li>
-
-                </ul>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <!-- Serviços resumo -->
-
-          <div class="space-y-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-            <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-
-              o que a ctowl faz na prática
-
-            </p>
-
-            <div class="space-y-3 text-[13px] text-slate-300">
-
-              <p>
-
-                Entramos como um **braço técnico sênior**, montando arquitetura, definindo o que faz sentido construir agora e
-
-                orquestrando a execução com um squad de alto nível.
+                Formulário de contato
 
               </p>
-
-              <p>
-
-                Você passa a ter **clareza de próximos passos, visibilidade do progresso** e alguém do lado técnico que fala a
-
-                sua língua de negócio.
-
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- SERVIÇOS -->
-
-      <section class="border-t border-slate-900/80 py-10">
-
-        <div class="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-
-          <div>
-
-            <h2 class="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-
-              serviços da ctowl
-
-            </h2>
-
-            <p class="mt-3 text-xl font-semibold text-slate-50 md:text-2xl">
-
-              Produtos enxutos, arquitetura sólida e um squad que sabe o que está fazendo.
-
-            </p>
-
-          </div>
-
-          <p class="max-w-sm text-xs text-slate-400">
-
-            Todos os formatos começam com um diagnóstico técnico. A partir dele, definimos o modelo que faz sentido
-
-            para o seu momento.
-
-          </p>
-
-        </div>
-
-        <div class="grid gap-4 md:grid-cols-3">
-
-          <!-- Card 1 -->
-
-          <article class="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-
-            <div>
-
-              <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
-
-                produto principal
-
-              </p>
-
-              <h3 class="mt-2 text-sm font-semibold text-slate-50">
-
-                CTO-as-a-Service para founders
-
-              </h3>
 
               <p class="mt-2 text-xs text-slate-300">
 
-                Um CTO sênior ao seu lado, sem precisar montar time completo. Decisões técnicas alinhadas com estratégia de
+                Conte em poucas linhas onde seu produto está hoje e onde você quer
 
-                negócio.
-
-              </p>
-
-              <ul class="mt-3 space-y-1 text-[11px] text-slate-300">
-
-                <li>• Ideal para ideia, MVP ou pré-tração.</li>
-
-                <li>• Acompanhamento semanal com visão de produto.</li>
-
-                <li>• Curadoria de stack, time e roadmap.</li>
-
-              </ul>
-
-            </div>
-
-            <span class="mt-4 inline-flex w-max rounded-full bg-blue-600/10 px-3 py-1 text-[10px] font-medium text-blue-300">
-
-              Foco: clareza e decisões seguras
-
-            </span>
-
-          </article>
-
-          <!-- Card 2 -->
-
-          <article class="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-
-            <div>
-
-              <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
-
-                antes de codar
+                chegar. Respondemos com um próximo passo claro.
 
               </p>
 
-              <h3 class="mt-2 text-sm font-semibold text-slate-50">
 
-                Discovery & Arquitetura de Produto
 
-              </h3>
+              <form class="mt-4 space-y-4">
 
-              <p class="mt-2 text-xs text-slate-300">
+                <div>
 
-                Entendemos o problema, definimos o escopo mínimo viável e desenhamos a arquitetura certa pra agora — sem
+                  <label for="name" class="text-xs font-medium text-slate-200">
 
-                overengineering.
+                    Nome
 
-              </p>
+                  </label>
 
-              <ul class="mt-3 space-y-1 text-[11px] text-slate-300">
+                  <input
 
-                <li>• Mapear jornadas, fluxos e funcionalidades core.</li>
+                    id="name"
 
-                <li>• Desenhar arquitetura técnica com trade-offs claros.</li>
+                    type="text"
 
-                <li>• Entregar blueprint reutilizável com ou sem a CTOwl.</li>
+                    placeholder="Seu nome"
 
-              </ul>
+                    class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm
 
-            </div>
+                           text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
 
-            <span class="mt-4 inline-flex w-max rounded-full bg-slate-800 px-3 py-1 text-[10px] font-medium text-slate-200">
+                  />
 
-              Evita retrabalho e custo desnecessário
+                </div>
 
-            </span>
 
-          </article>
 
-          <!-- Card 3 -->
+                <div>
 
-          <article class="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
+                  <label for="email" class="text-xs font-medium text-slate-200">
 
-            <div>
+                    E-mail
 
-              <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
+                  </label>
 
-                execução
+                  <input
 
-              </p>
+                    id="email"
 
-              <h3 class="mt-2 text-sm font-semibold text-slate-50">
+                    type="email"
 
-                Squad de desenvolvimento sênior
+                    placeholder="voce@startup.com"
 
-              </h3>
+                    class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm
 
-              <p class="mt-2 text-xs text-slate-300">
+                           text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
 
-                Time enxuto, sênior e guiado por arquitetura. Foco em entregar produto rodando, não só código bonito.
+                  />
 
-              </p>
+                </div>
 
-              <ul class="mt-3 space-y-1 text-[11px] text-slate-300">
 
-                <li>• Entregas quinzenais visíveis.</li>
 
-                <li>• Stack moderna (React, Node, etc.).</li>
+                <div>
 
-                <li>• Transparência total de progresso e riscos.</li>
+                  <label for="stage" class="text-xs font-medium text-slate-200">
 
-              </ul>
+                    Estágio do produto
 
-            </div>
+                  </label>
 
-            <span class="mt-4 inline-flex w-max rounded-full bg-slate-800 px-3 py-1 text-[10px] font-medium text-slate-200">
+                  <select
 
-              Ideal para quem quer tirar do papel
+                    id="stage"
 
-            </span>
+                    class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm
 
-          </article>
+                           text-slate-100 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
 
-        </div>
+                  >
 
-      </section>
+                    <option>Ideia / validação inicial</option>
 
-      <!-- PROCESSO -->
+                    <option>MVP em construção</option>
 
-      <section id="processo" class="border-t border-slate-900/80 py-10">
+                    <option>Produto em tração</option>
 
-        <div class="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                    <option>Projeto travado / legado</option>
 
-          <div>
+                  </select>
 
-            <h2 class="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
+                </div>
 
-              como trabalhamos
 
-            </h2>
 
-            <p class="mt-3 text-xl font-semibold text-slate-50 md:text-2xl">
+                <div>
 
-              Um fluxo simples: entender, desenhar, executar, evoluir.
+                  <label for="message" class="text-xs font-medium text-slate-200">
 
-            </p>
+                    Contexto rápido
 
-          </div>
+                  </label>
 
-          <p class="max-w-sm text-xs text-slate-400">
+                  <textarea
 
-            Nada de planos mirabolantes de 2 anos. Trabalhamos em ciclos curtos, com clareza de escopo e impacto de cada
+                    id="message"
 
-            entrega.
+                    rows="4"
 
-          </p>
+                    placeholder="Explique em poucas linhas o cenário atual, principais dores e o que você espera resolver nos próximos meses."
 
-        </div>
+                    class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm
 
-        <div class="grid gap-4 md:grid-cols-4">
+                           text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
+                  ></textarea>
 
-            <span class="text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-500">etapa 1</span>
+                </div>
 
-            <h3 class="mt-2 text-sm font-semibold text-slate-50">Diagnóstico técnico</h3>
 
-            <p class="mt-2 text-xs text-slate-300">
 
-              Entendemos o momento da sua startup, o contexto de negócio e o estado atual (ou inexistente) do produto.
+                <button
 
-            </p>
+                  type="submit"
 
-          </div>
+                  class="inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-4 py-2.5 text-sm font-semibold
 
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-            <span class="text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-500">etapa 2</span>
-
-            <h3 class="mt-2 text-sm font-semibold text-slate-50">Arquitetura & escopo</h3>
-
-            <p class="mt-2 text-xs text-slate-300">
-
-              Definimos o escopo enxuto que faz sentido agora e desenhamos a arquitetura que aguenta crescer.
-
-            </p>
-
-          </div>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-            <span class="text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-500">etapa 3</span>
-
-            <h3 class="mt-2 text-sm font-semibold text-slate-50">Execução em ciclos</h3>
-
-            <p class="mt-2 text-xs text-slate-300">
-
-              Rodamos sprints com entregas claras e acompanhamos de perto o impacto de cada release.
-
-            </p>
-
-          </div>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-            <span class="text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-500">etapa 4</span>
-
-            <h3 class="mt-2 text-sm font-semibold text-slate-50">Evolução contínua</h3>
-
-            <p class="mt-2 text-xs text-slate-300">
-
-              Ajustamos o roadmap conforme feedback de usuário, métricas e estratégia de negócio.
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- CASES -->
-
-      <section id="cases" class="border-t border-slate-900/80 py-10">
-
-        <div class="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-
-          <div>
-
-            <h2 class="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-
-              sinais de confiança
-
-            </h2>
-
-            <p class="mt-3 text-xl font-semibold text-slate-50 md:text-2xl">
-
-              Menos slide bonito, mais produto rodando.
-
-            </p>
-
-          </div>
-
-          <p class="max-w-sm text-xs text-slate-400">
-
-            Adapte esses números e cases com a realidade da CTOwl, mas a estrutura de comunicação já está pronta para uso.
-
-          </p>
-
-        </div>
-
-        <div class="grid gap-4 md:grid-cols-[1.2fr,1fr]">
-
-          <div class="grid gap-4 md:grid-cols-2">
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-              <p class="text-2xl font-semibold text-blue-400">20+ </p>
-
-              <p class="mt-1 text-xs text-slate-300">produtos digitais desenhados ou resgatados.</p>
-
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-              <p class="text-2xl font-semibold text-blue-400">90% </p>
-
-              <p class="mt-1 text-xs text-slate-300">
-
-                dos founders relatam maior clareza técnica após 30 dias.
-
-              </p>
-
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-              <p class="text-2xl font-semibold text-blue-400">X</p>
-
-              <p class="mt-1 text-xs text-slate-300">
-
-                Ajuste aqui com algum resultado de redução de custos / retrabalho.
-
-              </p>
-
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-              <p class="text-2xl font-semibold text-blue-400">Y</p>
-
-              <p class="mt-1 text-xs text-slate-300">
-
-                Ajuste com case de tempo para sair do zero ao MVP.
-
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-            <p class="text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-400">
-
-              mini-case
-
-            </p>
-
-            <p class="text-sm font-semibold text-slate-50">
-
-              "Saímos de um projeto travado há 1 ano para um MVP em 90 dias."
-
-            </p>
-
-            <p class="text-xs text-slate-300">
-
-              Um founder não técnico chegou com um sistema em frangalhos, múltiplos devs terem passado pelo código e nenhuma
-
-              entrega visível em meses. Reestruturamos a arquitetura, limpamos o escopo e colocamos um squad focado em gerar
-
-              valor rápido para o usuário final.
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- SOBRE -->
-
-      <section id="sobre" class="border-t border-slate-900/80 py-10">
-
-        <div class="grid gap-6 md:grid-cols-[1.1fr,0.9fr] md:items-center">
-
-          <div>
-
-            <h2 class="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-
-              sobre a ctowl
-
-            </h2>
-
-            <p class="mt-3 text-xl font-semibold text-slate-50 md:text-2xl">
-
-              Menos agência, mais parceiro técnico que fala a sua língua.
-
-            </p>
-
-            <p class="mt-3 text-sm text-slate-300">
-
-              A CTOwl nasce da junção de experiência em produto, arquitetura de software e vivência direta com founders. Já
-
-              vimos de perto o impacto de decisões técnicas ruins — e o potencial quando a base é bem feita.
-
-            </p>
-
-            <p class="mt-3 text-sm text-slate-300">
-
-              Nosso compromisso é simples: **não prometer o que não vamos entregar** e **traduzir tecnologia para negócio**,
-
-              para que você decida com segurança.
-
-            </p>
-
-          </div>
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-xs text-slate-300">
-
-            <p class="text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-400">
-
-              o que você pode esperar
-
-            </p>
-
-            <ul class="mt-3 space-y-2">
-
-              <li>• Conversas diretas, sem buzzword inútil.</li>
-
-              <li>• Transparência sobre riscos e trade-offs.</li>
-
-              <li>• Visão de produto, não só de código.</li>
-
-              <li>• Foco no que te aproxima de receita, não no que só deixa o sistema "bonito".</li>
-
-            </ul>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- CONTATO -->
-
-      <section id="contato" class="border-t border-slate-900/80 py-10">
-
-        <div class="grid gap-6 md:grid-cols-[1.1fr,0.9fr] md:items-start">
-
-          <div>
-
-            <h2 class="text-sm font-semibold uppercase tracking-[0.25em] text-blue-400">
-
-              próximo passo
-
-            </h2>
-
-            <p class="mt-3 text-xl font-semibold text-slate-50 md:text-2xl">
-
-              Se você quer clareza técnica para tirar seu produto do papel, vamos conversar.
-
-            </p>
-
-            <p class="mt-3 text-sm text-slate-300">
-
-              Preencha o formulário ao lado ou conecte direto no canal que fizer mais sentido. Usamos a primeira conversa para
-
-              entender seu momento e sugerir caminhos — sem compromisso.
-
-            </p>
-
-            <div class="mt-4 flex flex-wrap gap-3 text-xs">
-
-              <a
-
-                href="#"
-
-                class="inline-flex items-center justify-center rounded-full border border-blue-500/60 bg-blue-600/10 px-4 py-2 font-medium text-blue-300 hover:bg-blue-600/20"
-
-              >
-
-                Falar no WhatsApp
-
-              </a>
-
-              <a
-
-                href="#"
-
-                class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900 px-4 py-2 font-medium text-slate-200 hover:border-slate-500"
-
-              >
-
-                Ver agenda de diagnósticos
-
-              </a>
-
-            </div>
-
-          </div>
-
-          <!-- Formulário -->
-
-          <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
-
-            <form class="space-y-3 text-xs">
-
-              <div>
-
-                <label class="mb-1 block text-[11px] font-medium text-slate-300">Nome</label>
-
-                <input
-
-                  type="text"
-
-                  class="w-full rounded-lg border border-slate-800 bg-slate-950 px-3 py-2 text-xs text-slate-100 placeholder-slate-600 focus:border-blue-500 focus:outline-none"
-
-                  placeholder="Seu nome"
-
-                />
-
-              </div>
-
-              <div>
-
-                <label class="mb-1 block text-[11px] font-medium text-slate-300">E-mail</label>
-
-                <input
-
-                  type="email"
-
-                  class="w-full rounded-lg border border-slate-800 bg-slate-950 px-3 py-2 text-xs text-slate-100 placeholder-slate-600 focus:border-blue-500 focus:outline-none"
-
-                  placeholder="voce@startup.com"
-
-                />
-
-              </div>
-
-              <div>
-
-                <label class="mb-1 block text-[11px] font-medium text-slate-300">Estágio do produto</label>
-
-                <select
-
-                  class="w-full rounded-lg border border-slate-800 bg-slate-950 px-3 py-2 text-xs text-slate-100 focus:border-blue-500 focus:outline-none"
+                         text-slate-950 shadow-md shadow-sky-500/30 transition hover:scale-[1.02] hover:bg-sky-400"
 
                 >
 
-                  <option>Ideia</option>
+                  Enviar e receber diagnóstico inicial
 
-                  <option>MVP em definição</option>
+                </button>
 
-                  <option>MVP em desenvolvimento</option>
 
-                  <option>Produto rodando, mas travado</option>
 
-                  <option>Escalando e refinando</option>
+                <p class="mt-2 text-[11px] text-slate-500">
 
-                </select>
+                  Não vamos encher sua caixa de entrada: a ideia é ter clareza se faz
 
-              </div>
+                  sentido seguirmos juntos.
 
-              <div>
+                </p>
 
-                <label class="mb-1 block text-[11px] font-medium text-slate-300">Conte um pouco do contexto</label>
+              </form>
 
-                <textarea
-
-                  rows="4"
-
-                  class="w-full rounded-lg border border-slate-800 bg-slate-950 px-3 py-2 text-xs text-slate-100 placeholder-slate-600 focus:border-blue-500 focus:outline-none"
-
-                  placeholder="Quais são hoje as principais dores com produto/tecnologia?"
-
-                ></textarea>
-
-              </div>
-
-              <button
-
-                type="submit"
-
-                class="mt-1 w-full rounded-full bg-blue-600 px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-blue-600/30 hover:bg-blue-500"
-
-              >
-
-                Enviar
-
-              </button>
-
-              <p class="mt-2 text-[10px] text-slate-500">
-
-                Respondemos normalmente em até 1 dia útil com próximos passos e possíveis formatos de atuação.
-
-              </p>
-
-            </form>
+            </div>
 
           </div>
 
@@ -1130,34 +1972,82 @@
 
       </section>
 
-      <!-- FOOTER -->
-
-      <footer class="border-t border-slate-900/80 py-6 text-[11px] text-slate-500">
-
-        <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-
-          <p>© <span id="year"></span> CTOwl. Todos os direitos reservados.</p>
-
-          <div class="flex gap-4">
-
-            <a href="#" class="hover:text-slate-300">LinkedIn</a>
-
-            <a href="#" class="hover:text-slate-300">E-mail</a>
-
-          </div>
-
-        </div>
-
-      </footer>
-
     </main>
 
-    <script>
 
-      document.getElementById('year').textContent = new Date().getFullYear();
 
-    </script>
+    <!-- Footer simples -->
 
-  </body>
+    <footer class="border-t border-slate-800 bg-slate-950">
+
+      <div
+
+        class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-[11px] text-slate-500 md:flex-row md:items-center md:justify-between"
+
+      >
+
+        <p>
+
+          © <span id="year"></span> CTOwl. Partner técnico premium para founders não técnicos.
+
+        </p>
+
+        <p class="text-xs">
+
+          Arquitetura antes de código. Clareza antes de escopo infinito.
+
+        </p>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+
+  <!-- JS leve: menu mobile + ano dinâmico -->
+
+  <script>
+
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+
+    const mobileMenu = document.getElementById('mobile-menu');
+
+
+
+    if (mobileToggle && mobileMenu) {
+
+      mobileToggle.addEventListener('click', () => {
+
+        mobileMenu.classList.toggle('hidden');
+
+      });
+
+
+
+      // Fechar menu ao clicar em um link
+
+      mobileMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
+
+        link.addEventListener('click', () => {
+
+          mobileMenu.classList.add('hidden');
+
+        });
+
+      });
+
+    }
+
+
+
+    // Ano atual no footer
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
 
 </html>
